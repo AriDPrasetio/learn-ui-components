@@ -47,7 +47,7 @@ Setiap milestone / komponen baru:
 
 ### M1.1 — Folder Structure
 
-- [ ] Buat seluruh folder structure:
+- [x] Buat seluruh folder structure:
 
   ```text
 
