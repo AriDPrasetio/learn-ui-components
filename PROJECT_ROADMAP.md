@@ -18,6 +18,12 @@
 
 ---
 
+## 📋 Update Log
+
+- **Revisi audit (2026-09-10)**: tambah `prefers-reduced-motion` override global (M1.6), catatan troubleshooting ES Modules (M1.8), klarifikasi `role="alert"` statis vs dinamis (M2.5), update pola Drag & Drop ke rekomendasi APG terkini (M4.4), opsi matikan autoplay saat reduced-motion (M4.5), opsional automated a11y check (M5). Arsitektur inti (ITCSS, 2-tier token, BEM, tooling) tidak berubah — sudah solid.
+
+---
+
 ## Git Workflow Reminder
 
 ```text
@@ -103,6 +109,7 @@ Setiap milestone / komponen baru:
 ### M1.6 — Base ITCSS Layers
 
 - [ ] `css/generic/reset.css` — modern box-sizing, margin reset, media fluid rules
+  - [ ] 🪙 Global `@media (prefers-reduced-motion: reduce)` override — set `animation-duration`/`transition-duration` ke ~0.01ms untuk semua elemen (WCAG 2.1 AA best practice, belum ada di versi sebelumnya)
 - [ ] `css/elements/base.css` — body, headings (h1–h3), paragraphs, using semantic tokens
 - [ ] `css/elements/links.css` — link styles, `:focus-visible` ring
 - [ ] `css/objects/container.css` — `.o-container`, `.o-container--narrow`
@@ -118,6 +125,12 @@ Setiap milestone / komponen baru:
 - [ ] `js/modules/utils.js` — `delegate()` function, `onReady()` helper
 - [ ] `js/modules/theme-toggle.js` — dark/light mode switcher
 - [ ] `js/main.js` — entry point, import modules
+
+📝 **Catatan troubleshooting ES Modules**: topik ini formal baru dibahas belakangan di roadmap JS Fase 2 — kalau stuck di sini, cek 3 hal ini dulu sebelum menyimpulkan "belum paham JS":
+
+- `<script type="module" src="js/main.js">` di HTML — lupa `type="module"` menyebabkan `Uncaught SyntaxError: Cannot use import statement outside a module`
+- Path import harus eksplisit relatif dan menyertakan ekstensi (`./utils.js`, bukan `utils`)
+- Native ES Modules butuh HTTP server (`serve`) — tidak akan jalan kalau `index.html` dibuka langsung via `file://`
 
 ### M1.9 — Landing Page
 
@@ -243,7 +256,8 @@ Setiap milestone / komponen baru:
   - [ ] Modifiers: `--info`, `--success`, `--warning`, `--error`
   - [ ] Elements: `__icon`, `__title`, `__message`, `__close`
 - [ ] Accessibility:
-  - [ ] `role="alert"` untuk notifikasi penting
+  - [ ] `role="alert"` **hanya** untuk alert yang di-inject/berubah secara dinamis saat runtime (mis. hasil validasi form) — screen reader tidak akan announce konten yang sudah statis di DOM sejak page load
+  - [ ] Untuk callout statis (dokumentasi, catatan info) — cukup semantic HTML tanpa `role="alert"`, atau `role="status"` kalau tetap butuh live region yang lebih halus
   - [ ] Close button dengan `aria-label="Dismiss"`
 - [ ] `NOTES.md`
 - [ ] Update katalog → Lint → Push → PR
@@ -486,8 +500,8 @@ Setiap milestone / komponen baru:
 - [ ] `index.html`, `c-drag-drop.css`, `drag-drop.js`
 - [ ] Pointer/mouse event handling for drag
 - [ ] Visual drop indicator
-- [ ] `aria-grabbed`, `aria-dropeffect` (deprecated but educational)
-- [ ] Keyboard alternative: select + move with arrow keys
+- [ ] 📝 `aria-grabbed`/`aria-dropeffect` sudah dihapus dari spec ARIA 1.2 — boleh dicoba untuk nilai edukasi, tapi implementasi utama pakai pola APG terkini di bawah
+- [ ] Keyboard alternative: select + move item dengan arrow keys, umumkan hasil reorder via `aria-live="polite"`
 - [ ] `NOTES.md` → Lint → Push → PR
 
 ### M4.5 — Carousel / Slider `feat/17-carousel`
@@ -501,6 +515,7 @@ Setiap milestone / komponen baru:
 - [ ] Prev/Next buttons, dot indicators
 - [ ] Swipe gesture support (touch events)
 - [ ] Pause auto-play on hover/focus
+- [ ] Matikan auto-play sepenuhnya jika `prefers-reduced-motion: reduce` terdeteksi
 - [ ] `NOTES.md` → Lint → Push → PR
 
 ### M4.6 — Multi-Select / Chips `feat/18-multi-select`
@@ -559,6 +574,7 @@ Setiap milestone / komponen baru:
   - [ ] Cek semua keyboard navigation end-to-end
   - [ ] Cek color contrast di light AND dark mode
   - [ ] Responsive test: 320px, 768px, 1024px, 1440px
+  - [ ] (Opsional) Jalankan axe DevTools / `axe-core` per komponen sebagai automated a11y check tambahan di luar Lighthouse
 - [ ] **Katalog page (`index.html`)**:
   - [ ] Semua 20 komponen ter-link dengan thumbnail/preview
   - [ ] Komponen dikelompokkan per phase (Basic / Intermediate / Advanced)
