@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "property-no-unknown": true,
+    "declaration-no-important": true,
+    "selector-class-pattern": "^(c|o|u|is|has)-[a-z][a-z0-9]*(?:__[a-z0-9]*)?(?:--[a-z][a-z0-9]*)?$",
+    "color-no-hex": true
+  }
+}

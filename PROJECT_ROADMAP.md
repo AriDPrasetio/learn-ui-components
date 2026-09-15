@@ -66,18 +66,18 @@ Setiap milestone / komponen baru:
 
 ### M1.2 — Tooling
 
-- [ ] `npm init -y`
-- [ ] Install devDependencies:
+- [x] `npm init -y`
+- [x] Install devDependencies:
 
   ```bash
   npm install --save-dev stylelint stylelint-config-standard eslint prettier serve
   ```
 
-- [ ] Buat `package.json` dengan scripts (`dev`, `lint:css`, `lint:js`, `format`, `lint`)
-- [ ] Buat `.stylelintrc.json`
-- [ ] Buat `.eslintrc.json`
-- [ ] Buat `.prettierrc`
-- [ ] Buat `.gitignore`
+- [x] Buat `package.json` dengan scripts (`dev`, `lint:css`, `lint:js`, `format`, `lint`)
+- [x] Buat `.stylelintrc.json`
+- [x] Buat `.eslintrc.json`
+- [x] Buat `.prettierrc`
+- [x] Buat `.gitignore`
 
 ### M1.3 — Font Setup
 
