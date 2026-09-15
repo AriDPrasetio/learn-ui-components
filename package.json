@@ -1,0 +1,30 @@
+{
+  "name": "learn-ui-components",
+  "version": "1.0.0",
+  "description": "Katalog latihan untuk membangun 20 komponen UI yang reusable, accessible, dan responsif menggunakan HTML, CSS, dan JavaScript vanilla.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx serve . --port 3000",
+    "lint:css": "stylelint \"css/**/*.css\"",
+    "lint:js": "eslint \"js/**/*.js\"",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "lint": "npm run lint:css && npm run lint:js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AriDPrasetio/learn-ui-components.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AriDPrasetio/learn-ui-components/issues"
+  },
+  "homepage": "https://github.com/AriDPrasetio/learn-ui-components#readme",
+  "devDependencies": {
+    "eslint": "^10.10.0",
+    "prettier": "^3.9.6",
+    "serve": "^14.2.6",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
