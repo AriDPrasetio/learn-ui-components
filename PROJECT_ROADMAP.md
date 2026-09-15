@@ -81,10 +81,10 @@ Setiap milestone / komponen baru:
 
 ### M1.3 — Font Setup
 
-- [ ] Download `Inter-Variable.woff2` dari [GitHub rsms/inter](https://github.com/rsms/inter/releases)
-- [ ] Simpan di `assets/fonts/inter/Inter-Variable.woff2`
-- [ ] Tambahkan `OFL-Inter.txt` (license file)
-- [ ] Buat `css/settings/primitive/fonts.css` dengan `@font-face` declaration
+- [x] Download `Inter-Variable.woff2` dari [GitHub rsms/inter](https://github.com/rsms/inter/releases)
+- [x] Simpan di `assets/fonts/inter/Inter-Variable.woff2`
+- [x] Tambahkan `OFL-Inter.txt` (license file)
+- [x] Buat `css/settings/primitive/fonts.css` dengan `@font-face` declaration
 
 ### M1.4 — Primitive Tokens (Minimal Starter)
 
