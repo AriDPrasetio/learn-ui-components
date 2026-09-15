@@ -1,11 +1,11 @@
 # Learn UI Components
 
-Katalog latihan untuk membangun 20 komponen UI yang reusable, accessible, dan responsif menggunakan HTML, CSS, dan JavaScript vanilla.
+Katalog latihan untuk membangun komponen UI yang reusable, accessible, dan responsif menggunakan Vanilla HTML, CSS, dan JavaScript.
 
 ## Fokus Pembelajaran
 
-- Semantic HTML dan aksesibilitas WCAG
-- Arsitektur CSS ITCSS dan penamaan BEM
+- Semantic HTML dan aksesibilitas WCAG Dasar
+- Arsitektur ITCSS dan penamaan BEM
 - Design tokens dua tingkat: primitive dan semantic
 - Keyboard navigation, ARIA, dan focus management
 - CSS logical properties serta dukungan light/dark mode
